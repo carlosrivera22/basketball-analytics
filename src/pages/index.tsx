@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NextPage } from 'next';
 import {
   Card,
@@ -136,7 +136,6 @@ const StatCard: React.FC<StatCardProps> = ({
 };
 
 const Dashboard: NextPage = () => {
-  const [timeframe, setTimeframe] = useState('week');
 
   return (
     <div className="p-6 bg-slate-50 dark:bg-slate-900 min-h-screen">
@@ -152,32 +151,6 @@ const Dashboard: NextPage = () => {
             <Bell size={14} className="mr-1" />
             Next Game: Dec 22
           </Badge>
-          <div className="bg-slate-100 dark:bg-slate-800 rounded-md p-1 flex">
-            <Button
-              variant={timeframe === 'week' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => setTimeframe('week')}
-              className={timeframe === 'week' ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}
-            >
-              Week
-            </Button>
-            <Button
-              variant={timeframe === 'month' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => setTimeframe('month')}
-              className={timeframe === 'month' ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}
-            >
-              Month
-            </Button>
-            <Button
-              variant={timeframe === 'season' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => setTimeframe('season')}
-              className={timeframe === 'season' ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}
-            >
-              Season
-            </Button>
-          </div>
         </div>
       </div>
 
